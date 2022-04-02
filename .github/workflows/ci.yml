@@ -37,5 +37,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       # lint, check, run tests, and build using RedwoodJS's GitHub Action
-      - name: Run CI
-        uses: redwoodjs/project-action-ci@main
+      - name: Build Redwood
+        run: yarn rw build
+      - name: Lint Redwood
+        run: yarn rw lint
+      - name: Check Redwood
+        run: yarn rw build
+      - name: Test Redwood
+        run: yarn rw test --watch false
